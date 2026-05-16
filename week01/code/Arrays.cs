@@ -13,7 +13,22 @@ public static class Arrays
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
 
-        return []; // replace this return statement with your own
+        // Step 1: Create a new double array with the size provided by length.
+        // Step 2: Use a loop to go through each position of the array.
+        // Step 3: For each position, calculate the multiple of the number.
+        //         Since arrays start at index 0, use (i + 1) to get the correct multiple.
+        // Step 4: Store each calculated multiple inside the array.
+        // Step 5: Return the completed array.
+
+        double[] multiples = new double[length];
+
+        for (int i = 0; i < length; i++)
+        {
+            multiples[i] = number * (i + 1);
+        }
+
+        return multiples;
+
     }
 
     /// <summary>
@@ -29,5 +44,21 @@ public static class Arrays
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
+
+        // Step 1: Determine how many items are in the list.
+        // Step 2: Identify the last "amount" items in the list.
+        //         These are the items that need to move to the front.
+        // Step 3: Store those last items in a temporary list.
+        // Step 4: Remove those last items from their original position.
+        // Step 5: Insert the temporary list at the beginning of the original list.
+        // Step 6: Since List is dynamic, modify the existing list directly.
+
+        int count = data.Count;
+
+        List<int> itemsToMove = data.GetRange(count - amount, amount);
+
+        data.RemoveRange(count - amount, amount);
+
+        data.InsertRange(0, itemsToMove);
     }
 }
